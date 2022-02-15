@@ -81,3 +81,17 @@ echo Secret generado: $db_password
 echo "Asegurando wp-config"
 
 chmod 640 /home/bitnami/stack/wordpress/wp-config.php
+
+echo "Estableciendo permisos a wp-content"
+
+chown -R bitnami:daemon /home/bitnami/stack/wordpress
+chown -R bitnami:daemon /home/bitnami/stack/wordpress/wp-content/plugins/
+chown -R bitnami:daemon /home/bitnami/stack/wordpress/wp-content/themes/
+chown -R daemon:daemon /home/bitnami/stack/wordpress/wp-content/uploads/
+chown -R daemon:daemon /home/bitnami/stack/wordpress/wp-content/cache/
+find /home/bitnami/stack/wordpress -type d -exec chmod 775 {} \;
+find /home/bitnami/stack/wordpress -type f -exec chmod 664 {} \;
+
+echo "Permisos actualizados"
+
+echo "Para generar el certificado, utiliza: sudo /opt/bitnami/bncert-tool"
