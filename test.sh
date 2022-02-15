@@ -60,3 +60,10 @@ echo DB_NAME: $db_name
 echo DB_USER: $db_user
 echo DB_PASSWORD: $db_password
 
+echo "Generando JWT Secret Key"
+
+jwt_secret=md5sum<<<$(date +"%T")
+
+echo Secret generado: $jwt_secret
+
+
