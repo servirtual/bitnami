@@ -13,6 +13,8 @@ wget $wpcontent/wp-content.zip --directory-prefix=/home/bitnami/stack/wordpress/
 
 echo Restaurando wp-content/ desde wp-content.zip
 
+ls /home/bitnami/stack/wordpres/wordpress.zip
+
 unzip /home/bitnami/stack/wordpress/wp-content.zip -d /home/bitnami/stack/wordpress/
 
 echo Limpiando archivos obsoletos
@@ -62,7 +64,7 @@ echo DB_PASSWORD: $db_password
 
 echo "Generando JWT Secret Key"
 
-jwt_secret=md5sum<<<$(date +"%T")
+jwt_secret=$db_hostY$db_password
 
 echo Secret generado: $jwt_secret
 
