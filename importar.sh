@@ -78,6 +78,10 @@ wp config set JWT_AUTH_SECRET_KEY $db_password
 
 echo Secret generado: $db_password
 
+echo "Configurando Learndash"
+
+wp config set LEARNDASH_DISABLE_TEMPLATE_CONTENT_OUTSIDE_LOOP false --raw
+
 echo "Asegurando wp-config"
 
 chmod 640 /home/bitnami/stack/wordpress/wp-config.php
