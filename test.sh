@@ -45,6 +45,9 @@ read db_password
 
 [ -z "$db_password" ] && echo "Debes especificar el DB_PASSWORD" && exit 1
 
+echo "Haciendo wp-config editable"
+
+sudo chmod 664 /home/bitnami/stack/wordpress/wp-config.php
 
 echo "Configurando el acceso a base de datos"
 
@@ -64,8 +67,10 @@ echo DB_PASSWORD: $db_password
 
 echo "Generando JWT Secret Key"
 
-jwt_secret=$db_hostY$db_password
+sudo wp config set JWT_AUTH_SECRET_KEY $db_password
 
-echo Secret generado: $jwt_secret
+echo Secret generado: $db_password
 
+echo "Asegurando wp-config"
 
+sudo chmod 640 /home/bitnami/stack/wordpress/wp-config.php
