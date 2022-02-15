@@ -94,4 +94,14 @@ find /home/bitnami/stack/wordpress -type f -exec chmod 664 {} \;
 
 echo "Permisos actualizados"
 
+echo "Generando usuario para Postman"
+
+wp user create postman postman@postman.com --role=administrator --user_pass=Ev:K-suEkxnC?z8r
+
+echo "Usuario generado"
+
+echo "================================"
+echo "========== TERMINAMOS =========="
+echo "================================"
+
 echo "Para generar el certificado, utiliza: sudo /opt/bitnami/bncert-tool"
