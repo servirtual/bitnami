@@ -45,6 +45,12 @@ read db_password
 
 [ -z "$db_password" ] && echo "Debes especificar el DB_PASSWORD" && exit 1
 
+echo Especifica el prefijo de la base de datos. Deja en blanco para utilizar [wp_]
+
+read db_prefix
+
+[ -z "$db_prefix" ] && db_prefix=wp_
+
 echo "Haciendo wp-config editable"
 
 chmod 664 /home/bitnami/stack/wordpress/wp-config.php
@@ -55,6 +61,7 @@ wp config set DB_HOST $db_host:3306
 wp config set DB_NAME $db_name
 wp config set DB_USER $db_user
 wp config set DB_PASSWORD $db_password
+wp config set table_prefix $db_prefix
 
 echo "Acceso configurado"
 
