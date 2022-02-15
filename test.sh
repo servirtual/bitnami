@@ -13,7 +13,7 @@ wget $wpcontent/wp-content.zip --directory-prefix=/home/bitnami/stack/wordpress/
 
 echo Restaurando wp-content/ desde wp-content.zip
 
-unzip /home/bitnami/stack/wordpress/wp-content.zip /home/bitnami/stack/wordpress/
+unzip /home/bitnami/stack/wordpress/wp-content.zip -d /home/bitnami/stack/wordpress/
 
 echo Limpiando archivos obsoletos
 
