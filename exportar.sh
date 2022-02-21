@@ -28,7 +28,7 @@ get_absolute_path () {
 
 backup_content() {
   echo "Creando respaldo"
-  zip -r $wp_absolute_path/wp-content.zip -d $wp_absolute_path
+  zip -r $wp_absolute_path/wp-content.zip $wp_absolute_path
   echo "${green}Contenido respaldado correctamente${reset}"
 }
 
