@@ -33,7 +33,7 @@ backup_content() {
 }
 
 show_settings() {
-  wp get config --skip-plugins
+  wp get config --skip-plugins --allow-root
 }
 
 
