@@ -33,14 +33,7 @@ backup_content() {
 }
 
 show_settings() {
-  echo "Generando usuario para Postman"
-  wp user create postman postman@postman-no.main --role=administrator --user_pass=Ev:K-suEkxnC?z8r --allow-root
-  if [ $? -eq 0 ];
-  then
-    echo "El usuario ya existe"
-  else
-    echo "Usuario generado"
-  fi
+  wp get config --skip-plugins
 }
 
 
