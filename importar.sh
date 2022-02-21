@@ -42,7 +42,7 @@ restore_content() {
   wget $url --directory-prefix=$wp_absolute_path
   [ ! -f $wp_absolute_path/wp-content.zip ] && echo "${red}Hubo un problema con la descarga. Verifica que la ruta sea correcta${reset}" && exit 1;
   echo "Restaurando archivos"
-  unzip $wp_absolute_path/wp-content.zip -d $wp_wp_absolute_path
+  unzip $wp_absolute_path/wp-content.zip -d $wp_absolute_path
   echo "Limpiando archivos obsoletos"
   rm -f $wp_absolute_path/wp-content.zip
   echo "${green}Contenido importado correctamente${reset}"
