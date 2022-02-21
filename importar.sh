@@ -20,7 +20,7 @@ get_absolute_path () {
   echo "Especifica la ruta de WordPress [/home/bitnami/stack/wordpress/]"
   read wp_absolute_path
   [ -z "$wp_absolute_path" ] && wp_absolute_path=/home/bitnami/stack/wordpress/
-#  [ ! -d "$wp_absolute_path" ] && echo "${red}La ruta no existe${reset}" && exit 1
+  [ ! -d "$wp_absolute_path" ] && echo "${red}La ruta no existe${reset}" && exit 1
   echo "Ruta seleccionada: ${green}$wp_absolute_path${reset}"
 }
 
