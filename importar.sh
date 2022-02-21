@@ -104,7 +104,8 @@ set_permissions() {
   chown -R daemon:daemon $wp_absolute_path/wp-content/plugins/
   chown -R daemon:daemon $wp_absolute_path/wp-content/themes/
   chown -R daemon:daemon $wp_absolute_path/wp-content/uploads/
-  chown -R daemon:daemon $wp_absolute_path/wp-content/cache/
+  [ ! -d "$wp_absolute_pathwp-content/cache/" ] && mkdir -p $wp_absolute_pathwp-content/cache
+  chown -R daemon:daemon $wp_absolute_pathwp-content/cache/
   find $wp_absolute_path -type d -exec chmod 775 {} \;
   find $wp_absolute_path -type f -exec chmod 664 {} \;
 
